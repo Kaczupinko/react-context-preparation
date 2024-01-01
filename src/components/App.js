@@ -1,17 +1,16 @@
 // ./src/components/App.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
     const [counter, setCounter] = useState(0);
-    const [isHover, setHover] = useState(false);
-    const style = {border: `${isHover * 4}px solid red`}
+
+    useEffect(() => {
+        console.log("counter: ", counter);
+    });
 
     return (
         <div>
             <button
-                style={style}
-                onMouseEnter={ e => setHover(true) }
-                onMouseLeave={ e => setHover(false) } 
                 onClick={ e => setCounter(counter + 1) }
             >{ counter }</button>
         </div>
