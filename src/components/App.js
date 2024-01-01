@@ -2,7 +2,7 @@
 import React from 'react';
 import Box from './Box';
 
-const TextContext = React.createContext();
+import { TextContext } from './../context';
 
 export default class App extends React.Component {
     render() {

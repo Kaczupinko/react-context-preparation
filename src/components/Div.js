@@ -1,10 +1,15 @@
 // ./src/components/Div.js
 import React from 'react';
+import { TextContext } from './../context';
 
 export default class Div extends React.Component {
     render() {
+        const { Consumer } = TextContext;
+
         return (
-            <div>React Context API</div>
+            <Consumer>
+                { context => <div>{ context }</div> }
+            </Consumer>
         )
     }
 }
