@@ -2,8 +2,15 @@
 import React from 'react';
 import Box from './Box';
 
+const TextContext = React.createContext();
+
 export default class App extends React.Component {
     render() {
-        return <Box />
+        const { Provider } = TextContext;
+        return (
+            <Provider value="Context API test!">
+                <Box />
+            </Provider>
+        )
     }
 }
